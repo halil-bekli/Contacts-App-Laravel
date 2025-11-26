@@ -4,6 +4,3 @@ This projects provide a UI to create a contacts app which allows the users to lo
 ## Tech Stack
 - Laravel (PHP)
 - Nodejs
-
-# my-repository
-Website administration and user management project draft using PHP which includes CRUD operations.
