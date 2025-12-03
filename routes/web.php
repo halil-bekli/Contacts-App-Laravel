@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\StudentsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,3 +23,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('students/trashed', [StudentsController::class, 'trashed'])->name('students.trashed');
+
+
+Route::post('students/{id}/restore', [StudentsController::class, 'restore'])->name('students.restore');
+Route::delete('students/{id}/forceDelete', [StudentsController::class, 'forceDelete'])->name('students.forceDelete');
+//Route::get('/students', [StudentController::class, 'index']);
+Route::resource('students', StudentsController::class);
